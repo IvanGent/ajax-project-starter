@@ -77,6 +77,7 @@ app.post("/kitten/comments", (req, res) => {
 });
 
 app.delete("/kitten/comments/:id", (req, res) => {
+  console.log('hello');
   const updatedComments = kitten.comments.filter((_, i) => i != req.params.id);
   kitten.comments = updatedComments;
   res.json({ comments: kitten.comments });
