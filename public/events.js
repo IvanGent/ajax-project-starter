@@ -7,6 +7,7 @@ const cat = async () => {
         const kittenImg = document.querySelector('.cat-pic');
         kittenImg.src = dataJSON.src;
         document.querySelector('.score').innerHTML = dataJSON.score;
+        document.querySelector('.loader').innerText = '';
     }
 }
 
@@ -117,6 +118,7 @@ function error(dataJSON) {
 
 const newPic = async () => {
     document.getElementById("new-pic").addEventListener('click', () => {
+        document.querySelector('.loader').innerText = 'Loading...'
         cat()
     })
 }
